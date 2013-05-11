@@ -1,5 +1,5 @@
 Conditions::Application.routes.draw do
   root :to => "reports#index"
 
-  resources :reports, :only => [:index]
+  resources :reports, :only => [:index, :new, :create]
 end

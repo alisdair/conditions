@@ -1,1 +1,16 @@
 %h1 Reports
+
+%table
+  %thead
+    %tr
+      %th Source
+      %th Open
+      %th Weather
+      %th Date
+  %tbody
+    - @reports.each do |report| 
+      %tr
+        %td=h report.source
+        %td= report.open
+        %td= report.weather
+        %td= report.created_at.to_s(:short)

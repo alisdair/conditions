@@ -12,4 +12,4 @@
 
   = f.input :weather, collection: ["Good", "Fair", "Poor"], as: :radio, wrapper_html: { class: "three-up" }
 
-  = f.submit "Send Report"
+  = f.submit "Send Report", data: { disable_with: "Sending, please wait…" }

@@ -1,9 +1,7 @@
 Conditions::Application.routes.draw do
-  resources :sources
-
   root to: "reports#index"
 
-  resources :sources, only: [:index] do
-    resources :reports, only: [:index, :new, :create]
+  scope 'sources/:source_id' do
+    resources :reports, only: [:new, :create]
   end
 end

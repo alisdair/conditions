@@ -18,5 +18,12 @@
   = csrf_meta_tag
 
 %body
-  #content
+  #header
+    .content
+      .title
+        %h1= yield :title
+      .date
+        = Date.today.to_s(:long)
+
+  .content
     = yield

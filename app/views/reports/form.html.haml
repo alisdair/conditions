@@ -1,12 +1,5 @@
 - content_for(:title) { "Conditions" }
 
-#header
-  .title
-    %h1= yield :title
-  .date
-    = Date.today.to_s(:long)
-
-
 = simple_form_for [@source, @report] do |f| 
   = f.input :status, collection: ["Open", "Closed"], as: :radio, wrapper_html: { class: "two-up" }
 

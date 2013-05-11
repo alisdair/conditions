@@ -10,7 +10,7 @@
   %tbody
     - @reports.each do |report| 
       %tr
-        %td=h report.source
+        %td=h report.source.name
         %td= report.status
         %td= report.weather
         %td= report.created_at.to_s(:short)

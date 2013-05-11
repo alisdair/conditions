@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_filter :validate_source
+  before_filter :validate_source, except: :index
 
   def index
     @reports = Report.all(order: "created_at DESC")
@@ -16,7 +16,7 @@ class ReportsController < ApplicationController
     @report.attributes = report_params
 
     if @report.save
-      redirect_to reports_path and return
+      redirect_to root_path and return
     end
 
     render "form"

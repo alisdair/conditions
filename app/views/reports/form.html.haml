@@ -1,6 +1,6 @@
 %h1 New report
 
-= simple_form_for @report do |f| 
+= simple_form_for [@source, @report] do |f| 
   = f.input :status, collection: ["Open", "Closed"]
 
   = f.input :weather, collection: ["Good", "Fair", "Poor"]

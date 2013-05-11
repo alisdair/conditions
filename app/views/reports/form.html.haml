@@ -1,8 +1,8 @@
 - content_for(:title) { "Conditions" }
 
 = simple_form_for [@source, @report] do |f| 
-  = f.input :status, collection: ["Open", "Closed"], as: :radio, wrapper_html: { class: "two-up" }
+  = f.input :status, collection: Report::Statuses, as: :radio, wrapper_html: { class: "two-up" }
 
-  = f.input :weather, collection: ["Good", "Fair", "Poor"], as: :radio, wrapper_html: { class: "three-up" }
+  = f.input :weather, collection: Report::Weathers, as: :radio, wrapper_html: { class: "three-up" }
 
   = f.submit "Send Report", data: { disable_with: "Sending, please wait…" }

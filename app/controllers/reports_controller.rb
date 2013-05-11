@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_filter :validate_source, except: :index
+  before_filter :load_source, except: :index
 
   def index
     @reports = Report.all(order: "created_at DESC")
@@ -28,7 +28,7 @@ class ReportsController < ApplicationController
     params.require(:report).permit(:status, :weather)
   end
 
-  def validate_source
+  def load_source
     @source = Source.keyed(params[:source_id])
   end
 end

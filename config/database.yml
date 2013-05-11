@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  database: conditions_dev
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: conditions_test
+  host: localhost
+  min_messages: WARNING
+
+production:
+  adapter: postgresql
+  database: conditions_live
+  host: localhost

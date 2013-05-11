@@ -18,7 +18,15 @@ describe Source do
 
   context "with existing key" do
     let(:existing) { FactoryGirl.create(:source) }
-    subject { FactoryGirl.build(:source, key: existing.key) }
-    it { should_not be_valid }
+
+    describe "validates uniqueness of key" do
+      subject { FactoryGirl.build(:source, key: existing.key) }
+      it { should_not be_valid }
+    end
+
+    describe "finds by key" do
+      subject { Source.keyed(existing.key) }
+      it { should == existing }
+    end
   end
 end

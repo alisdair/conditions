@@ -1,9 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :report do
-    association :source
-    status "Open"
-    weather "Fair"
+  factory :source do
+    name "Mark Greenkeeper"
+    key { SecureRandom.hex }
   end
 end

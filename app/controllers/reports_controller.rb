@@ -1,16 +1,19 @@
 class ReportsController < ApplicationController
+  before_filter :validate_source
+
   def index
-    @reports = Report.all
+    @reports = Report.all(order: "created_at DESC")
   end
 
   def new
-    @report = Report.new(source: "Mark")
+    @report = Report.new(source: @source)
 
     render "form"
   end
 
   def create
-    @report = Report.new(report_params)
+    @report = Report.new(source: @source)
+    @report.attributes = report_params
 
     if @report.save
       redirect_to reports_path and return
@@ -22,6 +25,10 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:source, :status, :weather)
+    params.require(:report).permit(:status, :weather)
+  end
+
+  def validate_source
+    @source = Source.keyed(params[:source_id])
   end
 end

@@ -1,10 +1,10 @@
 - content_for(:title) { "Lenzie GC Conditions" }
 
-%h1 New report
+%h1 Course Conditions
 
 = simple_form_for [@source, @report] do |f| 
-  = f.input :status, collection: ["Open", "Closed"]
+  = f.input :status, collection: ["Open", "Closed"], as: :radio
 
-  = f.input :weather, collection: ["Good", "Fair", "Poor"]
+  = f.input :weather, collection: ["Good", "Fair", "Poor"], as: :radio
 
-  = f.submit
+  = f.submit "Send Report"

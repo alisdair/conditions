@@ -1,3 +1,49 @@
-// Place all the styles related to the reports controller here.
-// They will automatically be included in application.css.
-// You can use Sass here: http://sass-lang.com/
+$button-color:  #17d
+$highlight:     #1d6
+$light-neutral: #ddd
+
+// I hate arithmetic
+*
+  box-sizing: border-box
+  font: 16px "Roboto", sans-serif
+
+// Hide the radio buttons and field name labels
+input[type=radio],
+div > label
+  display: none
+
+// Submit button style
+input[type=submit]
+  -webkit-appearance: none
+  background: $button-color
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,lighten($button-color, 15%)), color-stop(100%,$button-color))
+  color: white
+  font-size: 20px
+  padding: 1em 1em
+  border: 2px solid rgba(0, 0, 0, 0.2)
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.7), inset -2px -2px 2px rgba(0, 0, 0, 0.1)
+  width: 100%
+
+// Radio button choice labels
+span > label
+  float: left
+  background: $light-neutral
+  color: #555
+  border: 2px solid rgba(0, 0, 0, 0.3)
+  padding: 1em 3em
+  margin-right: -2px
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.7), inset -2px -2px 2px rgba(0, 0, 0, 0.1)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,$light-neutral), color-stop(100%,darken($light-neutral, 10%)))
+
+// Currently checked label
+input[type=radio]:checked + label
+  background: $highlight
+  color: #222
+  box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.7), inset 2px 2px 2px rgba(0, 0, 0, 0.1)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,darken($highlight, 5%)), color-stop(100%,lighten($highlight, 5%)))
+
+// Rows of radio buttons
+.input
+  clear: both
+  overflow: hidden
+  margin-bottom: 1em

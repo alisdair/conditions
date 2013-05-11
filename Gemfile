@@ -28,6 +28,9 @@ gem 'unicorn'
 gem 'haml'
 gem 'haml-rails'
 
+# Forms are nice
+gem 'simple_form'
+
 group :development, :test do
   # Development server improvements
   gem 'quiet_assets'

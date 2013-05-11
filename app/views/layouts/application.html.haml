@@ -6,11 +6,15 @@
   <!--<![endif]-->
   %meta{ :charset => "utf-8" }
 
-  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+  %meta{name: "viewport", content: "initial-scale=1.0,user-scalable=no,maximum-scale=1.0,width=device-width"}
+  %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+  %link{rel: "apple-touch-icon", href: "/assets/conditions.png"}
+  %link{rel: "shortcut icon", href: "/assets/conditions.png"}
 
   %title= content_for?(:title) ? yield(:title) : "Untitled"
 
   = stylesheet_link_tag "application"
+  = javascript_include_tag "application"
   = csrf_meta_tag
 
 %body

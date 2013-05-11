@@ -11,7 +11,7 @@ $border-radius: 0.25rem
   box-sizing: border-box
 
 body
-  font: 16px "Roboto", sans-serif
+  font: 20px "Roboto", sans-serif
   margin: 0
   -webkit-touch-callout: none
   -webkit-user-select: none
@@ -20,7 +20,7 @@ body
 // Restrict width of content wrappers
 .content
   max-width: 600px
-  margin: 0 auto
+  margin: 1em auto
 
 // Header styles
 #header
@@ -35,7 +35,7 @@ body
   padding: 0.5em 0
 
   .content
-    padding: 0 1rem
+    margin-top: 0
     div
       width: 50%
       float: left
@@ -44,10 +44,6 @@ body
       font-size: 1em
     .date
       text-align: right
-
-// Form contents
-form
-  margin: 1em
 
 // Hide the radio buttons
 input[type=radio]
@@ -61,6 +57,7 @@ div > label
   background: $mid-neutral
   color: $light-neutral
   -webkit-font-smoothing: antialiased
+  font-size: 16px
   font-weight: bold
   border: 2px solid rgba(0, 0, 0, 0.1)
   border-bottom: none
@@ -106,7 +103,6 @@ span > label
   float: left
   background: $light-neutral
   color: #555
-  font-size: 20px
   font-weight: bold
   border: 2px solid rgba(0, 0, 0, 0.3)
   padding: 1.5em 0
@@ -145,3 +141,20 @@ input[type=radio]:checked + label
   clear: both
   overflow: hidden
   margin-bottom: 1em
+
+// Table styling
+table
+  border-collapse: collapse
+  width: 100%
+  thead
+    background: $mid-neutral
+    color: white
+    -webkit-font-smoothing: antialiased
+    font-size: 16px
+  td, th
+    border: 2px solid $mid-neutral
+    padding: 0.5em 1em
+  tbody tr
+    background: white
+    &:nth-child(2n)
+      background: $light-neutral

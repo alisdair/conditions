@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :report do
-    source "MyString"
-    open false
-    weather "MyString"
+    source "Mark"
+    open true
+    weather "Fair"
   end
 end

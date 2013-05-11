@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
   end
 
   def new
-    @report = Report.new(source: @source)
+    @report = Report.new(source: @source, status: "Open", weather: "Fair")
 
     render "form"
   end

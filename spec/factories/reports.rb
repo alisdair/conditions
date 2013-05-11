@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :report do
     source "Mark"
-    open "Open"
+    status "Open"
     weather "Fair"
   end
 end

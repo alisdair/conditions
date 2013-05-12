@@ -1,0 +1,14 @@
+- content_for(:title) { "Report for #{@report.created_at.to_date.to_s(:short)}" }
+
+%p Thanks for the report, #{h @report.source.name}!
+
+%dl
+  %dt Status
+  %dd= @report.status
+  %dt Weather
+  %dd= @report.weather
+  %dt Reported
+  %dd= @report.created_at.to_s(:short)
+
+%p
+  = link_to "Report again", new_source_report_path(@source), class: "button secondary"

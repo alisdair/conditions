@@ -1,6 +1,8 @@
 $text-color:    #222
 $background:    #fff
-$button-color:  #17d
+
+$primary-color:  #17d
+$secondary-color: #972
 $highlight:     #7c7
 $light-neutral: #ddd
 $mid-neutral:   #777
@@ -71,11 +73,21 @@ div > label
   abbr
     display: none
 
+@mixin button-background($color)
+  background: $color
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,lighten($color, 15%)), color-stop(100%, $color))
+  &:hover
+    background: $color
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(44%, $color), color-stop(100%, darken($color, 10%)))
+
 // Submit button style
-input[type=submit]
+input[type=submit], a.button
+  +button-background($primary-color)
+  display: block
+  text-align: center
+  text-decoration: none
+  cursor: pointer
   -webkit-appearance: none
-  background: $button-color
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,lighten($button-color, 15%)), color-stop(100%, $button-color))
   color: white
   -webkit-font-smoothing: antialiased
   font-family: "Roboto", sans-serif
@@ -86,6 +98,13 @@ input[type=submit]
   border-radius: $border-radius
   box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.7), inset -2px -2px 2px rgba(0, 0, 0, 0.1)
   width: 100%
+
+  &.secondary
+    +button-background($secondary-color)
+
+  &:disabled
+    -webkit-animation: pulse 2s infinite
+    box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.3), inset 2px 2px 2px rgba(0, 0, 0, 0.1)
 
 // Submitting animation runs when submit button is disabled
 @-webkit-keyframes pulse
@@ -99,12 +118,9 @@ input[type=submit]
     color: $light-neutral
     background: $mid-neutral
 
-input[type=submit]:disabled
-  -webkit-animation: pulse 2s infinite
-  box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.3), inset 2px 2px 2px rgba(0, 0, 0, 0.1)
-
 // Radio button choice labels
 span > label
+  cursor: pointer
   float: left
   background: $light-neutral
   color: #555
@@ -115,6 +131,9 @@ span > label
   border-right-width: 0
   box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.7), inset -2px -2px 2px rgba(0, 0, 0, 0.1)
   background: -webkit-gradient(linear, left top, left bottom, color-stop(44%, $light-neutral), color-stop(100%,darken($light-neutral, 10%)))
+  &:hover
+    background: lighten($light-neutral, 10%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(44%, lighten($light-neutral, 10%)), color-stop(100%, $light-neutral))
 
 span:last-child > label
   border-right-width: 2px
@@ -170,6 +189,31 @@ table
     background: white
     &:nth-child(2n)
       background: $light-neutral
+
+// Definition list for reports#show
+dl
+  font-size: 0.75em
+  line-height: 1.25em
+  background: $light-neutral
+  border: 2px solid $mid-neutral
+  border-radius: $border-radius * 2
+  padding: 0.5em 1em
+  overflow: hidden
+
+dt
+  float: left
+  clear: both
+  font-weight: normal
+  width: 5em
+  margin-right: 1em
+  margin: 0.5em 0
+
+dd
+  font-weight: bold
+  display: inline
+  float: left
+  margin: 0.5em 0
+
 
 // Scale everything up for bigger devices
 @media screen and (min-device-height: 550px)

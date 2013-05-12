@@ -5,6 +5,10 @@ class ReportsController < ApplicationController
     @reports = Report.all(order: "created_at DESC")
   end
 
+  def show
+    @report = Report.find(params[:id])
+  end
+
   def new
     @report = Report.new(status: "Open", weather: "Fair")
 
@@ -16,7 +20,7 @@ class ReportsController < ApplicationController
     @report.attributes = report_params
 
     if @report.save
-      redirect_to root_path and return
+      redirect_to source_report_path(@source, @report) and return
     end
 
     render "form"

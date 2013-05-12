@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Conditions::Application.config.secret_key_base = '7c8a07ea39575ffd0df16487f3b8f00884969f66d8621fdb2c5da8607fd17c414863d9672b638c3ea365016446642b89791de0b8441f5ae4432816ea8f62628c'
+Conditions::Application.config.secret_key_base = ENV['CONDITIONS_SECRET_TOKEN']

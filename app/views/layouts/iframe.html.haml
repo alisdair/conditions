@@ -1,0 +1,15 @@
+!!! 5
+<!--[if IE 8 ]>    <html lang="en" class="no-js #{ @body_class } ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js #{ @body_class } ie9"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+%head
+  <!--<![endif]-->
+  %meta{ :charset => "utf-8" }
+
+  %title= content_for?(:title) ? yield(:title) : "Untitled"
+
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "application"
+
+%body{class: "iframe"}
+  = yield

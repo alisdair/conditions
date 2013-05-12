@@ -1,4 +1,5 @@
 - content_for(:title) { "Report for #{@report.created_at.to_date.to_s(:short)}" }
+- @body_class = "report_form"
 
 %p Thanks for the report, #{h @report.source.name}!
 

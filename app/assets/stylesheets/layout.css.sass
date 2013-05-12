@@ -1,0 +1,47 @@
+// I hate arithmetic
+*
+  box-sizing: border-box
+
+// Basic styles
+body
+  background: $background
+  color: $text-color
+  font: 20px "Roboto", sans-serif
+  line-height: 1.2em
+  margin: 0
+
+// Fix touch issues on mobile devices
+body.report_form
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  user-select: none
+
+// Restrict width of content wrappers
+.content
+  max-width: 600px
+  margin: 1rem auto
+  padding: 0 1rem
+
+// Header styles
+#header
+  background: $dark-neutral
+  color: white
+  -webkit-font-smoothing: antialiased
+  font-size: 0.7em
+  line-height: 1.5em
+  font-weight: bold
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5)
+  overflow: hidden
+  margin: 0
+  padding: 0.5em 0
+
+  .content
+    margin-top: 0
+    div
+      width: 50%
+      float: left
+    h1
+      margin: 0
+      font-size: 1em
+    .date
+      text-align: right

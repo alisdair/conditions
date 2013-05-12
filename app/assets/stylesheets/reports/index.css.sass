@@ -1,0 +1,21 @@
+// Table styling
+table
+  border-collapse: collapse
+  width: 100%
+  thead
+    background: $mid-neutral
+    color: white
+    -webkit-font-smoothing: antialiased
+    font-size: 0.75em
+  td, th
+    border: 2px solid $mid-neutral
+    padding: 0.5em 1em
+  tbody tr
+    background: white
+    &:nth-child(2n)
+      background: $light-neutral
+  td.empty
+    text-align: center
+    background: $light-neutral
+    color: $dark-neutral
+    font-size: 0.75em

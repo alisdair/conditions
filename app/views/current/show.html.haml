@@ -2,13 +2,16 @@
 
 %h1= yield :title
 
-%p
-  The course is
-  = succeed '.' do
-    %em{class: @report.status.parameterize}<
-      =h @report.status.downcase
-  Weather is #{h @report.weather.downcase}.
+- if @report.nil?
+  %p No condition reports yet.
+- else
+  %p
+    The course is
+    = succeed '.' do
+      %em{class: @report.status.parameterize}<
+        =h @report.status.downcase
+    Weather is #{h @report.weather.downcase}.
 
-%footer
-  Last updated: #{@report.created_at.to_s(:short)}.
-  = link_to "More course updates", root_url, target: "_blank"
+  %footer
+    Last updated: #{@report.created_at.to_s(:short)}.
+    = link_to "More course updates", root_url, target: "_blank"

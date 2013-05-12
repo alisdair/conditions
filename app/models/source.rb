@@ -1,4 +1,6 @@
 class Source < ActiveRecord::Base
+  has_many :reports, dependent: :destroy
+
   validates :name, presence: true
   validates :key, presence: true, length: { is: 32 }, uniqueness: true
 

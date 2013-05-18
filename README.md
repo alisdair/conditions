@@ -8,7 +8,7 @@ Scalable UI with giant buttons to make it super easy to use on smartphones and t
 &nbsp;
 ![Thanks!](http://f.cl.ly/items/3n0j2J2L0p1M2Y14152E/thanks.png)
 
-Currently exposes the data on a page designed to be embedded on the club website as an iframe. Next up is Twitter integration.
+Exposes the data as a simple table view, an embeddable `iframe`, and an Atom feed for posting to [Twitter](http://twitter.com/lenziegolfclub) using [IFTTT](http://ifttt.com/).
 
 ## License
 

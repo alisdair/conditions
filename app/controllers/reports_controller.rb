@@ -1,8 +1,11 @@
 class ReportsController < ApplicationController
   before_filter :load_source, except: :index
+  respond_to :html
+  respond_to :atom, only: :index
 
   def index
-    @reports = Report.all(order: "created_at DESC")
+    @reports = Report.all(order: "created_at DESC").take(30)
+    respond_with @reports
   end
 
   def show

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # gem 'rails', '4.0.0.beta1'
-gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 4.0.0'
 
 # Postgres!
 gem 'pg'
@@ -10,8 +10,8 @@ gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -52,11 +52,10 @@ group :development, :test do
   gem "pry-debugger"
 end
 
-# Heroku workarounds for Rails 4
 group :production do
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
+  # Heroku workarounds for Rails 4
+  gem 'rails_12factor'
 
-# NewRelic is a free way to stop dyno idling
-gem 'newrelic_rpm'
+  # NewRelic is a free way to stop dyno idling
+  gem 'newrelic_rpm'
+end

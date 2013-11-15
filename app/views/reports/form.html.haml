@@ -2,8 +2,8 @@
 - @body_class = "report_form"
 
 = simple_form_for [@source, @report] do |f| 
-  = f.input :status, collection: Report::Statuses, as: :radio, wrapper_html: { class: "two-up" }
+  = f.input :status, collection: Report::Statuses, as: :radio_buttons, wrapper_html: { class: "two-up" }
 
-  = f.input :weather, collection: Report::Weathers, as: :radio, wrapper_html: { class: "three-up" }
+  = f.input :weather, collection: Report::Weathers, as: :radio_buttons, wrapper_html: { class: "three-up" }
 
   = f.submit "Send Report", data: { disable_with: "Sending…" }

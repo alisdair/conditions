@@ -11,6 +11,7 @@
       %em{class: @report.status.parameterize}<
         =h @report.status.downcase
     Weather is #{h @report.weather.downcase}.
+    = greens_summary @report
 
   %footer
     Last updated: #{@report.created_at.to_s(:short)}.

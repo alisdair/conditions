@@ -4,7 +4,7 @@ atom_feed do |feed|
 
   @reports.each do |report|
     feed.entry(report) do |entry|
-      status = "The course is #{report.status.downcase}. Weather is #{report.weather.downcase}."
+      status = "The course is #{report.status.downcase}. Weather is #{report.weather.downcase}. #{greens_summary report}"
 
       entry.title status
       entry.content status, type: 'text'

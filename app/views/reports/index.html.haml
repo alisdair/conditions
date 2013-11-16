@@ -6,6 +6,8 @@
       %th Source
       %th Status
       %th Weather
+      %th Greens
+      %th Reason
       %th Reported
   %tbody
     - if @reports.empty?
@@ -16,4 +18,6 @@
         %td=h report.source.name
         %td= report.status
         %td= report.weather
+        %td= report.greens
+        %td= report.reason
         %td= report.created_at.to_s(:short)

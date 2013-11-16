@@ -6,4 +6,8 @@
 
   = f.input :weather, collection: Report::Weathers, as: :radio_buttons, wrapper_html: { class: "three-up" }
 
+  = f.input :greens, collection: Report::Greens, as: :radio_buttons, wrapper_html: { class: "three-up" }
+
+  = f.input :reason, collection: Report::Reasons, as: :radio_buttons, wrapper_html: { class: "three-up" }
+ 
   = f.submit "Send Report", data: { disable_with: "Sending…" }

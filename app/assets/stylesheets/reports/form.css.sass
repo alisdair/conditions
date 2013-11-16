@@ -5,7 +5,7 @@ input[type=radio]
 // Display field name
 div > label
   display: block
-  padding: 0.5em 0
+  padding: 0.25em 0
   text-align: center
   background: $mid-neutral
   color: $light-neutral
@@ -36,7 +36,7 @@ input[type=submit], a.button
   font-family: "Roboto", sans-serif
   font-size: 1.5em
   font-weight: bold
-  padding: 1em 0
+  padding: 0.5em 0
   border: 2px solid rgba(0, 0, 0, 0.2)
   border-radius: $border-radius
   box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.7), inset -2px -2px 2px rgba(0, 0, 0, 0.1)
@@ -70,7 +70,7 @@ input[type=submit], a.button
   color: #555
   font-weight: bold
   border: 2px solid rgba(0, 0, 0, 0.3)
-  padding: 1.5em 0
+  padding: 1em 0
   text-align: center
   border-right-width: 0
   box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.7), inset -2px -2px 2px rgba(0, 0, 0, 0.1)
@@ -79,17 +79,23 @@ input[type=submit], a.button
     background: lighten($light-neutral, 10%)
     background: -webkit-gradient(linear, left top, left bottom, color-stop(44%, lighten($light-neutral, 10%)), color-stop(100%, $light-neutral))
 
-.radio:last-child > label
-  border-right-width: 2px
-
 // Layout is hard
 .input .radio
-  width: 50%
   float: left
+.input.two-up .radio
+  width: 50%
+.input.two-up .radio:nth-child(3)
+  label
+    border-right-width: 2px
 .input.three-up .radio
   width: 33%
-.input.three-up .radio:nth-child(2)
-  width: 34%
+.input.three-up .radio:nth-child(4)
+  // MATHS
+  width: 34.3%
+  label
+    border-right-width: 2px
+.input.four-up .radio
+  width: 25%
 
 // Delicious rounded borders
 div > label
@@ -101,7 +107,8 @@ div > label
 .input span:nth-child(2) > label
   border-bottom-left-radius: $border-radius
 
-.input span:last-child > label
+.input.two-up span:nth-child(3) > label,
+.input.three-up span:nth-child(4) > label
   border-bottom-right-radius: $border-radius
 
 // Currently checked label
@@ -116,3 +123,16 @@ input[type=radio]:checked + label
   clear: both
   overflow: hidden
   margin-bottom: 1em
+
+// Validation errors
+.input .error
+  display: block
+  clear: both
+  padding: 1em
+  color: #fff
+  background: #d33
+  border-bottom-left-radius: $border-radius
+  border-bottom-right-radius: $border-radius
+  z-index: -1
+  position: relative
+  top: -$border-radius

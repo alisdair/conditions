@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130511154756) do
+ActiveRecord::Schema.define(version: 20131116100029) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "reports", force: true do |t|
     t.string   "status"
@@ -19,6 +22,8 @@ ActiveRecord::Schema.define(version: 20130511154756) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "source_id"
+    t.string   "greens"
+    t.string   "reason"
   end
 
   create_table "sources", force: true do |t|

@@ -5,5 +5,6 @@ FactoryGirl.define do
     association :source
     status "Open"
     weather "Fair"
+    greens "Summer"
   end
 end

@@ -13,7 +13,7 @@ class ReportsController < ApplicationController
   end
 
   def new
-    @report = Report.new(status: "Open", weather: "Fair")
+    @report = Report.new(status: "Open", weather: "Fair", greens: "Summer")
 
     render "form"
   end
@@ -32,7 +32,7 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:status, :weather)
+    params.require(:report).permit(:status, :weather, :greens, :reason)
   end
 
   def load_source

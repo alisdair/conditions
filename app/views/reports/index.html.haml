@@ -12,7 +12,7 @@
   %tbody
     - if @reports.empty?
       %tr
-        %td.empty{colspan: 4} No reports yet.
+        %td.empty{colspan: 6} No reports yet.
     - @reports.each do |report| 
       %tr
         %td=h report.source.name

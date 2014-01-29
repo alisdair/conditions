@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 # gem 'rails', '4.0.0.beta1'
 gem 'rails', '~> 4.0.0'
@@ -40,7 +40,6 @@ group :development, :test do
   gem "rspec", "~> 2.1"
   gem "rspec-rails"
   gem "shoulda-matchers", "1.0.0"
-  gem "capybara"
   gem 'factory_girl_rails', '~> 4.0'
 
   # Autotest

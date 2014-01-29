@@ -17,4 +17,3 @@
 
 # Local environment for config secrets
 .env
-.powenv

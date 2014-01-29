@@ -32,6 +32,9 @@ gem 'haml-rails'
 gem 'simple_form'
 
 group :development, :test do
+  # foreman as an alternative to pow
+  gem 'foreman'
+
   # Development server improvements
   gem 'quiet_assets'
   gem 'better_errors'

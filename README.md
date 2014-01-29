@@ -10,6 +10,29 @@ Scalable UI with giant buttons to make it super easy to use on smartphones and t
 
 Exposes the data as a simple table view, an embeddable `iframe`, and an Atom feed for posting to [Twitter](http://twitter.com/lenziegolfclub) using [IFTTT](http://ifttt.com/).
 
+## Usage
+
+Set up the environment:
+
+1. Check out the repository.
+2. Install gems: `bundle install`
+3. Run specs: `bundle exec rake spec`
+
+### Mac OS X and pow
+
+[pow](http://pow.cx/) is my preferred development setup.
+
+1. Set up pow: `ln -s $PWD ~/.pow/conditions`
+2. Open in a browser: http://conditions.dev/
+
+### Alternative: foreman
+
+Unfortunately pow is not available on Linux or Windows. In that case, or if you don't want to use pow, try using [foreman](http://ddollar.github.io/foreman/):
+
+1. Set up the .env file: `cp env.development .env`
+2. Run `bundle exec foreman start`
+3. Open in a browser: http://localhost:3000/
+
 ## License
 
 MIT.

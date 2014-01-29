@@ -13,12 +13,12 @@ describe Report do
     it { should_not be_valid }
   end
 
-  context "with summer greens" do
+  context "with normal conditions" do
     subject(:report) { FactoryGirl.build(:report) }
 
     its(:reason) { should be_nil }
 
-    describe "and specified reason" do
+    describe "but specified reason" do
       before { report.reason = "Frozen Ground"; report.save }
 
       it { should be_valid }
@@ -27,15 +27,14 @@ describe Report do
   end
 
   context "with mixed greens" do
-    subject(:report) { FactoryGirl.build(:report, greens: "Mixed") }
+    subject(:report) { FactoryGirl.build(:report, greens: "Mixed", reason: "Saturation") }
 
-    it { should_not be_valid }
+    it { should be_valid }
 
-    describe "and specified reason" do
-      before { report.reason = "Frozen Ground"; report.save }
+    describe "without specified reason" do
+      subject(:report) { FactoryGirl.build(:report, greens: "Mixed", reason: "") }
 
-      it { should be_valid }
-      its(:reason) { should eq "Frozen Ground" }
+      it { should_not be_valid }
     end
   end
 end

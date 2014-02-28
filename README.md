@@ -1,6 +1,6 @@
 # Conditions
 
-![Build Status](https://travis-ci.org/alisdair/conditions.png)
+[![Build Status](https://travis-ci.org/alisdair/conditions.png?branch=master)](https://travis-ci.org/alisdair/conditions)
 
 Simple web application to allow reporting of course conditions at my golf club.
 

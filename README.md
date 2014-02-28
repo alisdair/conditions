@@ -1,5 +1,7 @@
 # Conditions
 
+![Build Status](https://travis-ci.org/alisdair/conditions.png)
+
 Simple web application to allow reporting of course conditions at my golf club.
 
 Scalable UI with giant buttons to make it super easy to use on smartphones and tablets.

@@ -1,6 +1,6 @@
 # Conditions
 
-[![Build Status](https://travis-ci.org/alisdair/conditions.png?branch=master)](https://travis-ci.org/alisdair/conditions)
+![Build Status](https://circleci.com/gh/alisdair/conditions.png?circle-token=0bc01126f215fa7c0282db5ff61705537547aa74)
 
 Simple web application to allow reporting of course conditions at my golf club.
 

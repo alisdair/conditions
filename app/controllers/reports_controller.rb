@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
   respond_to :atom, only: :index
 
   def index
-    @reports = Report.all(order: "created_at DESC").take(30)
+    @reports = Report.order("created_at DESC").take(30)
     respond_with @reports
   end
 

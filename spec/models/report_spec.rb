@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Report do
+describe Report, type: :model do
   it { should_not be_valid }
 
   context "with factory" do

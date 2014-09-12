@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Source do
+describe Source, type: :model do
   context "with no field values" do
     subject { Source.new }
     it { should_not be_valid }

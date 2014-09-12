@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ReportsController do
+describe ReportsController, type: :controller do
   context "with source specified" do
   end
 end

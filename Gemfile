@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.4'
 
 gem 'rails', '~> 4.1.6'
 
@@ -27,7 +27,7 @@ group :development, :test do
   gem 'better_errors'
 
   # rspec
-  gem 'rspec', '~> 2.1'
+  gem 'rspec', '~> 3.0'
   gem 'rspec-rails'
   gem 'rspec-its'
   gem 'shoulda-matchers'

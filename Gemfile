@@ -18,6 +18,7 @@ gem 'unicorn'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'dotenv-rails'
 
 group :development, :test do
   # foreman as an alternative to pow
@@ -41,12 +42,15 @@ group :development, :test do
 
   # Pry is the best console
   gem 'pry-rails'
+  #
+  # deployment
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails'
 end
 
 group :production do
-  # Heroku workarounds for Rails 4
-  gem 'rails_12factor'
-
   # NewRelic is a free way to stop dyno idling
   gem 'newrelic_rpm'
 end

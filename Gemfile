@@ -36,10 +36,6 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
 
-  # Autotest
-  gem 'autotest-rails'
-  gem 'autotest-fsevent'
-
   # Pry is the best console
   gem 'pry-rails'
   #
